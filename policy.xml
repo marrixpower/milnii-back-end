@@ -1,0 +1,8 @@
+<policymap>
+  <policymap>
+    <all>
+      <path>/</path>
+      <policy domain="coder" rights="read | write" pattern="PDF" />
+    </all>
+  </policymap>
+</policymap>

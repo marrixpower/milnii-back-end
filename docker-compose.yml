@@ -1,0 +1,25 @@
+version: '3.8'
+services:
+  milnii-back-end:
+    build: .
+    image: milnii-back-end
+    ports:
+      - '4010:4010'
+    depends_on:
+      - milnii-mongodb
+    volumes:
+      - ./public:/milnii/public
+
+  milnii-mongodb:
+    image: mongo:7.0
+    command: mongod --port 27020
+    ports:
+      - '27020:27020'
+      # - '27017:27017'
+    environment:
+      MONGO_INITDB_DATABASE: Milnii
+      MONGO_INITDB_ROOT_USERNAME: milnii_usr
+      MONGO_INITDB_ROOT_PASSWORD: Du4CxCLh8Aemd5LT
+    volumes:
+      - ./mongodb_data:/data/db
+
